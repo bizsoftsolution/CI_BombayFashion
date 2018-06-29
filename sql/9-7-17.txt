@@ -1,0 +1,440 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 07, 2017 at 07:55 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.5.38
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `db_sugavans`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `persons`
+--
+
+CREATE TABLE `persons` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `firstName` varchar(100) DEFAULT NULL,
+  `lastName` varchar(100) DEFAULT NULL,
+  `gender` enum('male','female') DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `persons`
+--
+
+INSERT INTO `persons` (`id`, `firstName`, `lastName`, `gender`, `address`, `dob`, `photo`) VALUES
+(10, 'an', 'nn', 'male', 'hhh', '2016-12-08', '1482812933919.jpg'),
+(13, 'jh', 'jj', 'male', 'kk', '1990-10-10', '1482830180954.png'),
+(14, 'aa', 'aa', 'male', 'ssds', '0000-00-00', '1482827895440.png'),
+(16, 'anitha', 'sugumaran', 'female', 'jdfhdfh', '2016-12-16', '1483002963263.jpg'),
+(17, 'hh', 'hh', 'male', 'kk', '2016-12-30', '1483073855347.jpg'),
+(18, 'sad', 'sd', 'male', 'adad', '2017-09-13', '1504345677019.jpg'),
+(19, 'sad', 'sd', 'male', 'sd', '2017-09-27', '1504345788068.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `session_table`
+--
+
+CREATE TABLE `session_table` (
+  `id` varchar(40) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `data` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `session_table`
+--
+
+INSERT INTO `session_table` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('061dd121a293ab510a47da16ea6918f815203108', '::1', 1504763725, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736333538353b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('30c55c9ec4d5a51d198b6cbef737c66a98c8b54d', '::1', 1504760974, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736303937343b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('75cc7625f60dae7226c68247bb94914523dac71e', '::1', 1504758497, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735383230373b),
+('76f78cc16811c046d5ca7ad16df6ced2696d017d', '::1', 1504762066, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736313836333b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('7b4bfae386af05e629b5ae78aafd25116e057860', '::1', 1504759922, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735393636343b),
+('8c6ee5a708570373e7722bc276cdbabbecbab89a', '::1', 1504758764, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735383535313b),
+('90aaa44fbcc507d874cf01703d32b6b3367fbcd4', '::1', 1504753776, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735333737323b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('9ff1f6b2105a32513faf8d313c0f3516f3fe8981', '::1', 1504761820, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736313532383b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('a2d25101f731e40af700c0de5fe9bad63e3ecd1e', '::1', 1504753375, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735333334353b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('a3a3d9142d70acbb059673ad25112c251d132d84', '::1', 1504760082, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736303036303b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('b501a56ea707908f7ef81fca96f1259bc1aec075', '::1', 1504762609, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736323630373b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('ba0befac97791b31feaca7eb5110a7ddfd0ad709', '::1', 1504754244, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735343138373b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('bffd3b4c198aaac154db22ba1c8dcd1478342b48', '::1', 1504760860, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343736303539343b757365725f69647c733a313a2239223b757365725f747970657c733a323a224753223b66697273745f6e616d657c733a383a2247656e6572616c20223b6c6173745f6e616d657c733a303a22223b6d6964646c655f6e616d657c733a303a22223b656d61696c7c733a31323a22677340676d61696c2e636f6d223b70617373776f72647c733a353a223132333435223b6c6f676765645f696e7c733a343a2254525545223b),
+('dd95b56854bf26ca2c688c27b92a734c1adf6d47', '::1', 1504757881, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735373737303b),
+('de4150b1e3b6be2281ab6d9502efbd100d32ef6a', '::1', 1504755299, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735353035313b),
+('e6de24b018293ea405c749f7bede66f45b26d0cf', '::1', 1504755653, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530343735353433343b);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_album`
+--
+
+CREATE TABLE `tbl_album` (
+  `id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `album_name` varchar(250) NOT NULL,
+  `photos` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_album`
+--
+
+INSERT INTO `tbl_album` (`id`, `category_id`, `album_name`, `photos`) VALUES
+(10, 1, 'cxzcxzc', 'Image11.jpg,Image03.jpg'),
+(11, 2, 'sadsad', 'Image05@2x.jpg,Image03.jpg'),
+(12, 1, 'dscsds', ',Image06.jpg'),
+(13, 3, 'Govind & Suba', ',099f9441e358fc63eecdde3e055d0afa.jpg,9e015360a7e86579b1efb22e773c3c5b.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_blog`
+--
+
+CREATE TABLE `tbl_blog` (
+  `id` int(11) NOT NULL,
+  `blog_name` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `photos` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_blog`
+--
+
+INSERT INTO `tbl_blog` (`id`, `blog_name`, `description`, `photos`) VALUES
+(4, 'sad', 'sadd', '34294-200.png,099f9441e358fc63eecdde3e055d0afa.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `id` int(11) NOT NULL,
+  `category` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_category`
+--
+
+INSERT INTO `tbl_category` (`id`, `category`) VALUES
+(1, 'Wedding & Candid'),
+(2, 'Portrait & Landscape'),
+(3, 'Outdoor Clicks'),
+(4, 'Special Occassion'),
+(5, 'Kids & Babbies'),
+(6, 'Travel & Documentary');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_employee`
+--
+
+CREATE TABLE `tbl_employee` (
+  `id` int(11) NOT NULL,
+  `ename` varchar(255) NOT NULL,
+  `dob` date DEFAULT NULL,
+  `designation` varchar(255) NOT NULL,
+  `scope` varchar(50) NOT NULL,
+  `street1` varchar(255) DEFAULT NULL,
+  `street2` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(25) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `branch_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_employee`
+--
+
+INSERT INTO `tbl_employee` (`id`, `ename`, `dob`, `designation`, `scope`, `street1`, `street2`, `city`, `state`, `country`, `phone_number`, `email`, `password`, `photo`, `branch_no`) VALUES
+(1, 'General Secretory        ', '2017-02-02', 'GS        ', '', 'street', 'aa', 'aa', 'aa', 'aa', '123', 'gs@nube.org', '', '1483948837036.jpg', 0),
+(7, 'AGS', '1980-01-01', 'AGS', '', 's1', 's2', 'cc', 'ss', 'cc', '9787596516', 'ags@gmail.com', '', NULL, 9),
+(9, 'ani', '1980-01-01', 'Manger', '', 'aa', 'aa', 'aa', 'aa', 'aaa', '123456789', 'admin@gmail.com', '', NULL, 1),
+(12, 'Anitha', '1980-01-30', 'Officer', 'qq', 'qq', 'qq', 'qq', 'qq', 'qq', '12345678', 'ani@gmail.com', '12345', NULL, 1),
+(13, 'ruth', '1980-01-15', 'Officer', 'ww', 'ww', 'ww', 'ww', 'ww', 'ww', '321456987', 'ruth@gmail.com', '12345', NULL, 8),
+(14, 'General ', '1980-01-16', 'GS', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', '1233', 'gs@gmail.com', '12345', NULL, 1),
+(15, 'Front Desk', '1980-01-17', 'FrontDesk', 'll', 'll', 'l', 'l', 'l', 'l', '123', 'fd1@gmail.com', '12345', NULL, 1),
+(16, 'Front Desk', '1980-01-01', '', '', '', '', '', '', '', '', '', '', NULL, 0),
+(17, 'Front Desk', '1980-01-08', 'FrontDesk', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', '123', 'fr2@gmail.com', '12345', NULL, 8),
+(18, 'manager', '1980-01-01', '', '', '', '', '', '', '', '', '', '', NULL, 0),
+(19, 'manager', '1980-01-16', 'Manger', 'ss', 'aa', 'aa', 'aa', 'aa', 'aa', '123', 'mg@gmail.com', '12345', NULL, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_mail`
+--
+
+CREATE TABLE `tbl_mail` (
+  `mail_no` int(11) NOT NULL,
+  `organisation_name` varchar(150) NOT NULL,
+  `sender_name` varchar(150) NOT NULL,
+  `mail_description` text NOT NULL,
+  `reference_no` varchar(20) NOT NULL,
+  `mail_through` varchar(7) NOT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'UNASSIGNED',
+  `branch_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_mail`
+--
+
+INSERT INTO `tbl_mail` (`mail_no`, `organisation_name`, `sender_name`, `mail_description`, `reference_no`, `mail_through`, `status`, `branch_no`) VALUES
+(1, 'mail1', 'abc', 'hdfgvhd', '', 'MAIL', 'FOLLOWUP', 8),
+(2, 'mail2', 'obc', 'hdfgvhd', '', 'MAIL', 'TRANSFERED', 8),
+(3, 'mail3', 'asd', 'jjj', '', 'MAIL', 'FOLLOWUP', 8),
+(4, 'mail5', 'jjj', 'jjj', '', 'FAX', 'FILED', 8),
+(5, 'mail4', 'oooo', 'oooo', '', 'FAX', 'FILED', 8),
+(6, 'mail6', 'ppp', 'ppp', '', 'MAIL', 'ASSIGN', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `id` int(11) NOT NULL,
+  `slider` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`id`, `slider`) VALUES
+(1, '1504587874457.jpg'),
+(3, '1504588309947.jpg'),
+(4, '1504588397852.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_subscribe`
+--
+
+CREATE TABLE `tbl_subscribe` (
+  `id` int(11) NOT NULL,
+  `email_id` varchar(250) NOT NULL,
+  `phone_no` bigint(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_subscribe`
+--
+
+INSERT INTO `tbl_subscribe` (`id`, `email_id`, `phone_no`) VALUES
+(1, 'anitha@gmail.com', 123454456),
+(2, 'anitha12@gmail.com', 1223232434),
+(3, 'anitha12@gmail.com', 1223232434),
+(4, 'anitha12@gmail.com', 1223232434),
+(5, 'sadsda@gmail.com', 1323123),
+(6, 'sasd', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_video`
+--
+
+CREATE TABLE `tbl_video` (
+  `id` int(11) NOT NULL,
+  `video_name` varchar(250) NOT NULL,
+  `video_link` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_video`
+--
+
+INSERT INTO `tbl_video` (`id`, `video_name`, `video_link`) VALUES
+(2, 'abcd', 'https://www.youtube.com/embed/uxR_4W9T5Bk'),
+(3, 'qwer', 'https://www.youtube.com/embed/8jKYP24uhzI'),
+(4, 'asdf', 'https://www.youtube.com/embed/CR7ff0ibNoc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` bigint(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `logged_in` varchar(255) NOT NULL,
+  `last_login` datetime NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `middle_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `emp_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `password`, `user_type`, `email`, `logged_in`, `last_login`, `first_name`, `middle_name`, `last_name`, `emp_no`) VALUES
+(2, '123', 'FrontDesk', 'frontdesk@gmail.com', 'FALSE', '2017-03-14 03:33:11', 'Anitha', '', '', 5),
+(7, '12345', 'Officer', 'ani@gmail.com', 'TRUE', '2017-03-14 07:08:08', 'Anitha', '', '', 12),
+(8, '12345', 'Officer', 'ruth@gmail.com', 'FALSE', '2017-03-14 04:55:17', 'ruth', '', '', 13),
+(9, '12345', 'GS', 'gs@gmail.com', 'TRUE', '2017-09-07 07:54:45', 'General ', '', '', 14),
+(10, '12345', 'FrontDesk', 'fd1@gmail.com', 'FALSE', '2017-03-14 07:07:08', 'Front Desk', '', '', 15),
+(11, '', '', '', '', '0000-00-00 00:00:00', 'Front Desk', '', '', 16),
+(12, '12345', 'FrontDesk', 'fd2@gmail.com', 'FALSE', '2017-03-14 05:15:23', 'Front Desk', '', '', 17),
+(13, '', '', '', '', '0000-00-00 00:00:00', 'manager', '', '', 18),
+(14, '12345', 'Manger', 'mg@gmail.com', '', '0000-00-00 00:00:00', 'manager', '', '', 19);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `persons`
+--
+ALTER TABLE `persons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `session_table`
+--
+ALTER TABLE `session_table`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ci_sessions_timestamp` (`timestamp`);
+
+--
+-- Indexes for table `tbl_album`
+--
+ALTER TABLE `tbl_album`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_blog`
+--
+ALTER TABLE `tbl_blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_employee`
+--
+ALTER TABLE `tbl_employee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_mail`
+--
+ALTER TABLE `tbl_mail`
+  ADD PRIMARY KEY (`mail_no`);
+
+--
+-- Indexes for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_subscribe`
+--
+ALTER TABLE `tbl_subscribe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_video`
+--
+ALTER TABLE `tbl_video`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `persons`
+--
+ALTER TABLE `persons`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `tbl_album`
+--
+ALTER TABLE `tbl_album`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `tbl_blog`
+--
+ALTER TABLE `tbl_blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `tbl_employee`
+--
+ALTER TABLE `tbl_employee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `tbl_mail`
+--
+ALTER TABLE `tbl_mail`
+  MODIFY `mail_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_subscribe`
+--
+ALTER TABLE `tbl_subscribe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `tbl_video`
+--
+ALTER TABLE `tbl_video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
